@@ -7,11 +7,11 @@
 //
 
 #import "VSStyleView.h"
-#import "NSView+VSStyle.h"
-#import "VSStyleSheet.h"
-
-#import "VSStyles.h"
-#import "VSShapes.h"
+//#import "NSView+VSStyle.h"
+//#import "VSStyleSheet.h"
+//
+//#import "VSStyles.h"
+//#import "VSShapes.h"
 
 @implementation VSStyleView
 

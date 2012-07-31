@@ -7,8 +7,8 @@
 //
 
 #import "LightStyleSheet.h"
-#import "VSStyles.h"
-#import "VSShapes.h"
+//#import "VSStyles.h"
+//#import "VSShapes.h"
 
 @implementation LightStyleSheet
 

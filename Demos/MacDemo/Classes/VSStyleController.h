@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <VStyle/VStyle.h>
 #import "VSStyleView.h"
 #import "VSStyleLabel.h"
 

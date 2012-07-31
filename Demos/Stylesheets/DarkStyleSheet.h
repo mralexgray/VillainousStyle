@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "VSStyleSheet.h"
+#import <VStyle/VStyle.h>
 
 @interface DarkStyleSheet : VSStyleSheet {
 	
