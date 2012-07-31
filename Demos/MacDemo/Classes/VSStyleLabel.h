@@ -11,10 +11,10 @@
 
 @interface VSStyleLabel : VSStyleView {
     //STUB add your instance variables here
-	NSString *stringValue;
+	NSString *text;
 }
 
 //STUB add your method declarations here
-@property (nonatomic, copy) NSString *stringValue;
+@property (nonatomic, copy) NSString *text;
 
 @end

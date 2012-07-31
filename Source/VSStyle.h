@@ -15,7 +15,7 @@
 //  limitations under the License.
 //
 
-#import "VSGlobal.h"
+
 #import "VSGlobal.h"
 #import "VSShape.h"
 #import "VSStyleContext.h"
@@ -43,6 +43,7 @@ static const NSInteger kDefaultLightSource = 125;
 - (id)styleForPart:(NSString*)name;
 
 - (CGGradientRef)newGradientWithColors:(VSColor**)colors count:(int)count ;
+- (CGGradientRef)newGradientWithColors:(VSColor**)colors locations:(CGFloat*)locations count:(int)count;
 
 // all child styles with no value in their next
 // uses an NSSet in case future styles can have split layouts

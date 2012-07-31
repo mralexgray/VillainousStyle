@@ -24,6 +24,17 @@
 #import "NSImage+CGImage.h"
 #import "NSImage+ContentMode.h"
 
+
+//EXTRA
+#import "VSView.h"
+#import "VSLinearGradientBorderStyle.h"
+#import "VSLabel.h"
+#import "VSHighlightBorderStyle.h"
+#import "VSButton.h"
+#import "VSBlendStyle.h"
+//#import "NSColor+VSStyle.h"
+
+
 @interface VStyle : NSObject
 
 @end

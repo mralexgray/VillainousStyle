@@ -100,6 +100,43 @@
 	return nil;
 }
 
+- (CGGradientRef)newGradientWithColors:(VSColor**)colors locations:(CGFloat*)locations count:(int)count {
+	CGFloat* components = malloc(sizeof(CGFloat)*4*count);
+	int i;
+	for (i = 0; i < count; ++i) {
+		VSColor* color = colors[i];
+		size_t n = CGColorGetNumberOfComponents(color.CGColor);
+		const CGFloat* rgba = CGColorGetComponents(color.CGColor);
+		if (n == 2) {
+			components[i*4] = rgba[0];
+			components[i*4+1] = rgba[0];
+			components[i*4+2] = rgba[0];
+			components[i*4+3] = rgba[1];
+		} else if (n == 4) {
+			components[i*4] = rgba[0];
+			components[i*4+1] = rgba[1];
+			components[i*4+2] = rgba[2];
+			components[i*4+3] = rgba[3];
+		}
+	}
+	
+	CGColorSpaceRef space = NULL;
+#if TARGET_OS_IPHONE
+	CGContextRef context = UIGraphicsGetCurrentContext();
+	space = CGBitmapContextGetColorSpace(context);
+#else
+	space = [[NSColorSpace deviceRGBColorSpace] CGColorSpace];
+#endif
+	CGGradientRef gradient = CGGradientCreateWithColorComponents(space, components, locations, count);
+	
+	free(components);
+#if TARGET_OS_IPHONE
+	CGColorSpaceRelease(space);
+#endif
+	
+	return gradient;
+}
+
 - (CGGradientRef)newGradientWithColors:(VSColor**)colors count:(int)count {
 	CGFloat* components = malloc(sizeof(CGFloat)*4*count);
 	int i = 0;

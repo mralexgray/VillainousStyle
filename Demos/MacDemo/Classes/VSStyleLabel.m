@@ -11,15 +11,15 @@
 
 @implementation VSStyleLabel
 
-@synthesize stringValue;
+@synthesize text;
 
 - (NSString*)textForLayerWithStyle:(VSStyle*)style{
-	return self.stringValue;
+	return self.text;
 }
 
 -(void)dealloc{
     //STUB release your objects here
-	[stringValue release];
+	[text release];
     
     [super dealloc];
 }
