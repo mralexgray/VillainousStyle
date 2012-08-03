@@ -14,6 +14,7 @@
 #import "LightStyleSheet.h"
 #import "DarkStyleSheet.h"
 #import "iDarkStyleSheet.h"
+#import "iLightStyleSheet.h"
 
 @implementation VSStyleController
 @synthesize backgroundView, ibackgroundView;
@@ -24,6 +25,7 @@
 		styleSheets = [[NSArray arrayWithObjects:
 						[LightStyleSheet styleSheet],
 						[DarkStyleSheet styleSheet],
+						[iLightStyleSheet styleSheet],
 						[iDarkStyleSheet styleSheet],
 					   nil] retain];
 		
@@ -41,7 +43,7 @@
 	NSUInteger index = [(NSPopUpButton *)sender selectedTag];
 	NSLog(@"Selecting stylesheet %ld",index);
 
-	if (index == 2) {
+	if (index > 1 ) {
 		[backgroundView performSelectorOnMainThread:@selector(fadeOut) withObject:nil waitUntilDone:YES];
 		[self selectStyleSheetAtIndex:index];
 		[ibackgroundView fadeIn];
@@ -54,7 +56,7 @@
 
 -(void)awakeFromNib{
 
-	NSRect erect = container.frame;
+	NSRect erect = NSInsetRect([container bounds],25,25);
 	ibackgroundView.frame = erect;
 	[ibackgroundView setHidden:YES];
 	[container addSubview:ibackgroundView];
@@ -67,9 +69,9 @@
 	styleView3.styleName = @"lowerLeftStyle";
 	styleView4.styleName = @"lowerRightStyle";
 
-	ibackgroundView.styleName = @"backgroundStyle";
+	ibackgroundView.styleName = @"ibackgroundStyle";
 	ztoggleLabel.styleName = @"ztoggleLabelStyle";
-//	toggleLabel.text = @"Toggle Stylesheet";
+	ztoggleLabel.text = @"Toggle Stylesheet";
 
 	rectStyle.styleName = @"rectStyle";
 	roundRectStyle.styleName = @"roundRectStyle";
@@ -86,7 +88,7 @@
 	zbackButtonStyle.styleName = @"zbackButtonStyle";
 	zbackButtonStyle.text = @"Navigation";
 	badgeStyle.styleName = @"badgeStyle";
-	//maskedImageStyle.styleName = @"maskedImageStyle";
+	maskedImageStyle.styleName = @"maskedImageStyle";
 
 }
 

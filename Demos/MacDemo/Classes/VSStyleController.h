@@ -39,6 +39,8 @@
 	IBOutlet VSStyleLabel *zbackButtonStyle;
 	IBOutlet VSStyleLabel *ztoggleLabel;
 
+
+	IBOutlet VSStyleView *maskedImageStyle;
 	IBOutlet NSView *container;
 
 }

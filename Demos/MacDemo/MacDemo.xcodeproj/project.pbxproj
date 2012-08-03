@@ -18,7 +18,8 @@
 		7B48C91315C86C6F004A5A99 /* VStyle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B48C91115C86C63004A5A99 /* VStyle.framework */; };
 		7B48C91615C86C80004A5A99 /* VStyle.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 7B48C91115C86C63004A5A99 /* VStyle.framework */; };
 		7B48C91A15C8702E004A5A99 /* iDarkStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B48C91915C8702E004A5A99 /* iDarkStyleSheet.m */; };
-		7B48C91C15C87315004A5A99 /* AtoZ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B48C91B15C87315004A5A99 /* AtoZ.framework */; };
+		7B68D04815C8890000D929EA /* iLightStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B68D04715C8890000D929EA /* iLightStyleSheet.m */; };
+		7B68D04B15C8903A00D929EA /* AGDarkStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B68D04A15C8903900D929EA /* AGDarkStyle.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -99,7 +100,10 @@
 		7B48C8FA15C86BF8004A5A99 /* VillainousStyle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = VillainousStyle.xcodeproj; path = ../../Source/VillainousStyle.xcodeproj; sourceTree = SOURCE_ROOT; };
 		7B48C91815C8702E004A5A99 /* iDarkStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iDarkStyleSheet.h; sourceTree = "<group>"; };
 		7B48C91915C8702E004A5A99 /* iDarkStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iDarkStyleSheet.m; sourceTree = "<group>"; };
-		7B48C91B15C87315004A5A99 /* AtoZ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AtoZ.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/AtoZ.framework; sourceTree = DEVELOPER_DIR; };
+		7B68D04615C8890000D929EA /* iLightStyleSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iLightStyleSheet.h; sourceTree = "<group>"; };
+		7B68D04715C8890000D929EA /* iLightStyleSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iLightStyleSheet.m; sourceTree = "<group>"; };
+		7B68D04915C8901800D929EA /* AGDarkStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDarkStyle.h; sourceTree = "<group>"; };
+		7B68D04A15C8903900D929EA /* AGDarkStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDarkStyle.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MacDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MacDemo-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* MacDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MacDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,7 +113,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B48C91C15C87315004A5A99 /* AtoZ.framework in Frameworks */,
 				7B48C91315C86C6F004A5A99 /* VStyle.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 			);
@@ -161,6 +164,10 @@
 		1E311FCF10AA6CD700D72994 /* Stylesheets */ = {
 			isa = PBXGroup;
 			children = (
+				7B68D04615C8890000D929EA /* iLightStyleSheet.h */,
+				7B68D04715C8890000D929EA /* iLightStyleSheet.m */,
+				7B68D04915C8901800D929EA /* AGDarkStyle.h */,
+				7B68D04A15C8903900D929EA /* AGDarkStyle.m */,
 				7B48C91815C8702E004A5A99 /* iDarkStyleSheet.h */,
 				7B48C91915C8702E004A5A99 /* iDarkStyleSheet.m */,
 				1E311FD010AA6CD700D72994 /* DarkStyleSheet.h */,
@@ -175,7 +182,6 @@
 		29B97314FDCFA39411CA2CEA /* MacDemo */ = {
 			isa = PBXGroup;
 			children = (
-				7B48C91B15C87315004A5A99 /* AtoZ.framework */,
 				7B48C8FA15C86BF8004A5A99 /* VillainousStyle.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -333,6 +339,8 @@
 				1E311FDD10AA6D2200D72994 /* VSStyleLabel.m in Sources */,
 				1E311FDE10AA6D2200D72994 /* VSStyleView.m in Sources */,
 				7B48C91A15C8702E004A5A99 /* iDarkStyleSheet.m in Sources */,
+				7B68D04815C8890000D929EA /* iLightStyleSheet.m in Sources */,
+				7B68D04B15C8903A00D929EA /* AGDarkStyle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
