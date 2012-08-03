@@ -1,35 +1,27 @@
 //
-//  iLightStyleSheet.m
-//  MobileVillainous
+//  iDarkStyleSheet.m
+//  MacDemo
 //
-//  Licensed under the Apache License, Version 2.0 (the "License");
-//  you may not use this file except in compliance with the License.
-//  You may obtain a copy of the License at
+//  Created by Alex Gray on 7/31/12.
 //
-//  http://www.apache.org/licenses/LICENSE-2.0
-//
-//  Unless required by applicable law or agreed to in writing, software
-//  distributed under the License is distributed on an "AS IS" BASIS,
-//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//  See the License for the specific language governing permissions and
-//  limitations under the License.
 //
 
-#import "iLightStyleSheet.h"
-//#import <AtoZ/AtoZ.h>
+#import "AGDarkStyle.h"
+#import <VStyle/VStyle.h>
 
-@implementation iLightStyleSheet
+@implementation AGDarkStyle
 
-#define kBlackColor    VSColorRGB(0.62, 0.64, 0.67)
-#define kBlueColor     VSColorRGB(0.75, 0.77, 0.82)
-#define kDarkBlueColor VSColorRGB(0.43, 0.52, 0.64)
+
+#define kBlackColor VSColorRGB(0.62, 0.64, 0.67)
+#define kBlueColor VSColorRGB(0.75, 0.77, 0.82)
+#define kDarkBlueColor VSColorRGB(0.28, 0.42, 0.6)
 
 -(VSStyle *)ibackgroundStyle {
-	return [VSSolidFillStyle styleWithColor:VSColorRGB(0.85, 0.87, 0.91) next:nil];
+	return [VSSolidFillStyle styleWithColor:VSColorRGB(0.26, 0.26, 0.26) next:nil];
 }
 
 -(VSStyle *)ztoggleLabelStyle {
-	return 	[VSTextStyle styleWithFont:[VSFont boldSystemFontOfSize:18] color:VSColorRGBA(0, 0, 0, 1) next:nil];
+	return 	[VSTextStyle styleWithFont:[VSFont boldSystemFontOfSize:18] color:VSColorRGBA(1, 1, 1, 1) next:nil];
 }
 
 -(VSStyle *)rectStyle {
@@ -46,8 +38,8 @@
 -(VSStyle *)gradBorderStyle {
 	return [VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:10] next:
 			[VSSolidFillStyle styleWithColor:[VSColor whiteColor] next:
-			 [VSLinearGradientBorderStyle styleWithColor1:[VSColor blackColor]
-												   color2:VSColorRGB(0.85, 0.87, 0.91) width:2 next:nil]]];
+			 [VSLinearGradientBorderStyle styleWithColor1:[VSColor blackColor] color2:VSColorRGB(0.85, 0.87, 0.91) width:2 next:nil]]];
+	return nil;
 }
 
 
@@ -113,43 +105,36 @@
 
 -(VSStyle *)embossStyle {
 	return [VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:10] next:
-			[VSLinearGradientFillStyle styleWithColor1:VSColorRGB(1, 1, 1)
-												color2:VSColorRGB(0.85, 0.87, 0.91) next:
+			[VSLinearGradientFillStyle styleWithColor1:VSColorRGB(1, 1, 1) color2:VSColorRGB(0.85, 0.87, 0.91) next:
 			 [VSFourBorderStyle styleWithTop:kBlueColor right:kBlackColor bottom:kBlackColor left:kBlueColor width:1 next:nil]]];
 }
 
 
 -(VSStyle *)toolbarButtonStyle {
-	return [VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:4.5] next:
-			[VSShadowStyle styleWithColor:VSColorRGB(1, 1, 1) blur:1 offset:CGSizeMake(0, 1) next:
-			 [VSReflectiveFillStyle styleWithColor:kDarkBlueColor next:
-			  [VSBevelBorderStyle styleWithHighlight:[kDarkBlueColor shadow]
-											  shadow:[kDarkBlueColor multiplyHue:1 saturation:0.5 value:0.5]
-											   width:1 lightSource:270 next:
-			   [VSInsetStyle styleWithInset:UIEdgeInsetsMake(0, -1, 0, -1) next:
-				[VSBevelBorderStyle styleWithHighlight:nil shadow:VSColorRGBA(0,0,0,0.15)
-												 width:1 lightSource:270 next:nil]]]]]];
+	return	[VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:5] next:
+			 [VSShadowStyle styleWithColor:VSColorRGBA(1, 1, 1, 0.36) blur:1 offset:CGSizeMake(0, 0.5) next:
+			  [VSReflectiveFillStyle styleWithColor:kDarkBlueColor next:
+			   [VSInnerShadowStyle styleWithColor:VSColorRGBA(0, 0, 0, 0.7) blur:1 offset:CGSizeMake(0, 1) next:
+				[VSLinearGradientBorderStyle styleWithColor1:VSColorRGBA(0.22, 0.31, 0.46, 0.0) location1:0.5 color2:VSColorRGB(0.22, 0.31, 0.46) location2:1 width:1 next:
+			     [VSTextStyle styleWithFont:[VSFont boldSystemFontOfSize:18] color:[VSColor whiteColor] minimumFontSize:12 shadowColor:VSColorRGBA(0, 0, 0, 0.45) shadowOffset:CGSizeMake(0, 1) textAlignment:UITextAlignmentCenter verticalAlignment:UIControlContentVerticalAlignmentCenter lineBreakMode:UILineBreakModeTailTruncation numberOfLines:1 next:nil]]]]]];
+	
 }
 
 
--(VSStyle *)backButtonStyle {
-	return [VSShapeStyle styleWithShape:[VSRoundedLeftArrowShape shapeWithRadius:4.5] next:
-			[VSShadowStyle styleWithColor:VSColorRGB(1, 1, 1) blur:1 offset:CGSizeMake(0, 1) next:
-			 [VSReflectiveFillStyle styleWithColor:kDarkBlueColor next:
-			  [VSBevelBorderStyle styleWithHighlight:[kDarkBlueColor shadow]
-											  shadow:[kDarkBlueColor multiplyHue:1 saturation:0.5 value:0.5]
-											   width:1 lightSource:270 next:
-			   [VSInsetStyle styleWithInset:UIEdgeInsetsMake(0, -1, 0, -1) next:
-				[VSBevelBorderStyle styleWithHighlight:nil shadow:VSColorRGBA(0,0,0,0.15)
-												 width:1 lightSource:270 next:nil]]]]]];
+-(VSStyle *)zbackButtonStyle {
+	return	[VSShapeStyle styleWithShape:[VSRoundedLeftArrowShape shapeWithRadius:5] next:
+			 [VSShadowStyle styleWithColor:VSColorRGBA(1, 1, 1, 0.36) blur:1 offset:CGSizeMake(0, 0.5) next:
+			  [VSReflectiveFillStyle styleWithColor:kDarkBlueColor next:
+			   [VSInnerShadowStyle styleWithColor:VSColorRGBA(0, 0, 0, 0.7) blur:1 offset:CGSizeMake(0, 1) next:
+				[VSLinearGradientBorderStyle styleWithColor1:VSColorRGBA(0.22, 0.31, 0.46, 0.0) location1:0.5 color2:VSColorRGB(0.22, 0.31, 0.46) location2:1 width:1 next:
+			     [VSTextStyle styleWithFont:[VSFont boldSystemFontOfSize:18] color:[VSColor whiteColor] minimumFontSize:12 shadowColor:VSColorRGBA(0, 0, 0, 0.45) shadowOffset:CGSizeMake(0, 1) textAlignment:UITextAlignmentCenter verticalAlignment:UIControlContentVerticalAlignmentCenter lineBreakMode:UILineBreakModeTailTruncation numberOfLines:1 next:nil]]]]]];
 }
-
 
 -(VSStyle *)badgeStyle {
 	return [VSShapeStyle styleWithShape:[VSRoundedRectangleShape shapeWithRadius:VS_ROUNDED] next:
 			[VSInsetStyle styleWithInset:UIEdgeInsetsMake(1.5, 1.5, 1.5, 1.5) next:
 			 [VSShadowStyle styleWithColor:VSColorRGBA(0,0,0,0.8) blur:3 offset:CGSizeMake(0, 5) next:
-			  [VSReflectiveFillStyle styleWithColor:(VSColor*)[NSColor redColor]/*  [VSColor redColor] */next:
+			  [VSReflectiveFillStyle styleWithColor:[VSColor redColor] next:
 			   [VSInsetStyle styleWithInset:UIEdgeInsetsMake(-1.5, -1.5, -1.5, -1.5) next:
 				[VSSolidBorderStyle styleWithColor:[VSColor whiteColor] width:3 next:nil]]]]]];
 }

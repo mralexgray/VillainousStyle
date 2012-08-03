@@ -10,7 +10,7 @@
 #import <VStyle/VStyle.h>
 #import "VSStyleView.h"
 #import "VSStyleLabel.h"
-#import <AtoZ/AtoZ.h>
+//#import <AtoZ/AtoZ.h>
 
 @interface VSStyleController : NSWindowController {
 
@@ -49,4 +49,12 @@
 
 -(void)selectStyleSheetAtIndex:(NSUInteger)index;
 -(IBAction)changeStyleSheet:sender;
+@end
+
+
+@interface NSView (Fade)
+
+- (void)fadeOut;
+- (void)fadeIn;
+
 @end

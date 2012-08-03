@@ -100,3 +100,44 @@
 }
 
 @end
+
+@implementation NSView (Fade)
+
+
+
+- (NSArray *)animationArrayForParameters:(NSDictionary *)params
+{
+	NSMutableDictionary *animationDetails = [NSMutableDictionary
+											 dictionaryWithDictionary:params];
+	[animationDetails setObject:self forKey:NSViewAnimationTargetKey];
+	return [NSArray arrayWithObject:animationDetails];
+}
+
+- (void)playAnimationWithParameters:(NSDictionary *)params
+{
+	NSViewAnimation *animation = [[NSViewAnimation alloc]
+								  initWithViewAnimations:[self animationArrayForParameters:params]];
+	[animation setAnimationBlockingMode:NSAnimationBlocking];
+	[animation setDuration:.5];
+	[animation setAnimationCurve:NSAnimationEaseInOut];
+	[animation setDelegate:self];
+	[animation startAnimation];
+}
+
+
+- (void)fadeWithEffect:effect
+{
+	[self playAnimationWithParameters:[NSDictionary
+									   dictionaryWithObject:effect forKey:NSViewAnimationEffectKey]];
+}
+
+- (void)fadeOut 
+{
+	[self fadeWithEffect:NSViewAnimationFadeOutEffect];
+}
+
+- (void)fadeIn
+{
+	[self fadeWithEffect:NSViewAnimationFadeInEffect];
+}
+@end
